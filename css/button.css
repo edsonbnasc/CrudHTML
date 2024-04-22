@@ -1,0 +1,15 @@
+button.blue{
+    background-color: #1fb5ff;
+}
+button.green{
+    background-color: #13ce66;
+}
+
+button.red{
+    background-color: #ff4949;
+}
+
+/* button:hover{
+    box-shadow: 1px 1px 10px var(--shadow-color);
+
+} */
