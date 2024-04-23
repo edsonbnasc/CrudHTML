@@ -1,3 +1,16 @@
+button{
+    border-style: none;
+    height: 40px;
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    font: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.6s ease;
+    border-radius: 5px;
+}
+
+
 button.blue{
     background-color: #1fb5ff;
 }
@@ -9,7 +22,7 @@ button.red{
     background-color: #ff4949;
 }
 
-/* button:hover{
-    box-shadow: 1px 1px 10px var(--shadow-color);
+button:hover{
+    box-shadow: inset 200px 0 0 #00000055;
 
-} */
+}

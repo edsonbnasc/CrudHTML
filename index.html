@@ -51,7 +51,7 @@
             <section class="modalContent">
                 <header class="modalHeader">
                     <h2>Novo Usuário</h2>
-                    <span class="modalClose">&#10008</span>
+                    <span class="modalClose" id="modalClose">&#10008</span>
                 </header>
                 <form class="modalForm">
                     <input type="text" class="modalField" placeholder="Nome" id="name">
@@ -60,8 +60,8 @@
                     <input type="text" class="modalField" placeholder="Cidade" id="city">
                 </form>
                 <footer class="modalFooter">
-                    <button class="button green" id="slavarValues">Salvar</button>
-                    <button class="button red">Cancelar</button>
+                    <button class="button green" id="salvarValues">Salvar</button>
+                    <button class="button red" onclick="modalClose()">Cancelar</button>
                 </footer>
             </section>
         </section>
