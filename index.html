@@ -32,35 +32,37 @@
                         <th>Ação</th>
                     </tr>
                 </thead>
-                    <tbody>
-                        <tr>
-                            <td>Maria</td>
-                            <td>maria@maria.com.br</td>
-                            <td>(11) 99999-8888</td>
-                            <td>São Paulo</td>
-                            
-                            <td>
-                                <button type="button" class="button green">Editar</button>
-                                <button type="button" class="button red">Excluir</button>
-                            </td>
-                        </tr>
+                <!-- <tbody>
+                    <tr>
+                        <td>Maria</td>
+                        <td>maria@maria.com.br</td>
+                        <td>(11) 99999-8888</td>
+                        <td>São Paulo</td>
+                        <td>
+                            <button type="button" class="button green" onclick="edit()">Editar</button>
+                            <button type="button" class="button red" onclick="deleteUser()">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody> -->
+                    <tbody id="tableBodyList">
+
                     </tbody>
             </table>
         
         <section class="modal" id="modal">
             <section class="modalContent">
-                <header class="modalHeader">
+                <header class="modalHeader" id="modalHeader">
                     <h2>Novo Usuário</h2>
                     <span class="modalClose" id="modalClose">&#10008</span>
                 </header>
-                <form class="modalForm">
+                <form class="modalForm" >
                     <input type="text" class="modalField" placeholder="Nome" id="name">
-                    <input type="text" class="modalField" placeholder="E-mail" id="email">
-                    <input type="text" class="modalField" placeholder="Celular" id="cel">
+                    <input type="email" class="modalField" placeholder="E-mail" id="email">
+                    <input type="phone" class="modalField" placeholder="Celular" id="cel">
                     <input type="text" class="modalField" placeholder="Cidade" id="city">
                 </form>
                 <footer class="modalFooter">
-                    <button class="button green" id="salvarValues">Salvar</button>
+                    <button class="button green" type="submit" onclick="loadUserData()" id="saveValues">Salvar</button>
                     <button class="button red" onclick="modalClose()">Cancelar</button>
                 </footer>
             </section>
