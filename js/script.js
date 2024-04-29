@@ -108,7 +108,6 @@ function edit(id) {
     edit.innerHTML = ` <h2>Editar Usuário</h2>  `
     document.getElementById('saveValues').innerText = 'Atualizar'; //muda o texto do botao
     modalOpen();
-    // document.getElementById('saveValues').removeEventListener('click', loadUserData);
 
     const getUserData = JSON.parse(localStorage.getItem("users"));
     const userData = getUserData.find((identificarUsuario) => identificarUsuario.id == id);
@@ -119,7 +118,7 @@ function edit(id) {
     document.getElementById('cel').value = userData.celular;
     document.getElementById('city').value = userData.cidade;
 
-    document.getElementById('saveValues').addEventListener('click', updateUserInfo(id));
+    document.getElementById('saveValues').addEventListener('click', ()=>{updateUserInfo(id)});
 
 
 }
@@ -134,7 +133,7 @@ function updateUserInfo(id) {
         const userIndexFind = userList.findIndex((user) => user.id == id)
     
         if (userIndexFind !== -1) {
-            userList[userIndexFind].nome = newName;
+            userList[userIndexFind].name = newName;
             userList[userIndexFind].email = newEmail;
             userList[userIndexFind].phone = newCel;
             userList[userIndexFind].city = newCity;
@@ -145,48 +144,3 @@ function updateUserInfo(id) {
         }
     }
     
-// function updateUser(id) {
-//     modalOpen();
-
-//     document.getElementById('saveValues').removeEventListener('click', addUser);
-
-//     const textTitleUpdateUser = document.querySelector('h2');
-//     textTitleUpdateUser.innerText = "Atualizar Usuário";
-
-//     document.getElementById('saveValues').innerText = 'Atualizar';
-
-//     const getUserData = JSON.parse(localStorage.getItem("CadastroUsuarios"));
-
-//     const userData = getUserData.find(identificarUsuario => identificarUsuario.idUser === id);
-
-//     document.getElementById("name").value = userData.nomeUser;
-//     document.getElementById('email').value = userData.emailUser;
-//     document.getElementById('cel').value = userData.celUser;
-//     document.getElementById('city').value = userData.cityUser;
-
-//     document.getElementById('saveValues').addEventListener('click', updateUserInfo(id));
-// }
-
-// function updateUserInfo(id) {
-//     const newName = document.getElementById('name').value;
-//     const newEmail = document.getElementById('email').value;
-//     const newCel = document.getElementById('cel').value;
-//     const newCity = document.getElementById('city').value;
-
-//     const userList = JSON.parse(localStorage.getItem("CadastroUsuarios")) || []
-
-//     const userIndexFind = userList.findIndex((user) => user.idUser == id)
-
-//     if (userIndexFind !== -1) {
-//         userList[userIndexFind].nomeUser = newName;
-//         userList[userIndexFind].emailUser = newEmail;
-//         userList[userIndexFind].celUser = newCel;
-//         userList[userIndexFind].cityUser = newCity;
-
-//         console.log(userList);
-
-//         localStorage.setItem("CadastroUsuarios", JSON.stringify(userList));
-//     }
-
-//     modalClose();
-//     window.location.reload();
